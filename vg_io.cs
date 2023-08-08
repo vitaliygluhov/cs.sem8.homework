@@ -1,4 +1,4 @@
-//v1.07.29.2
+//v1.08.05.3
 namespace vgnamespace
 {
     public static class IO
@@ -84,6 +84,18 @@ namespace vgnamespace
                 Console.WriteLine();
             }
         }
+        public static int[] NumToArray(int Input)
+        {
+            int Count = 0;
+            for (int Temp = Input; Temp > 0; Count++)
+                Temp = Temp / 10;
+            int[] Arr = new int[Count];
+
+            for (int Index = 10, ArrCount = 0; Index <= Math.Pow(10, Count); Index *= 10, ArrCount++)
+                Arr[ArrCount] = Input % (Index) / (Index / 10);
+            return Arr;
+        }
+
         public static void CC()
         {
             Console.Clear();
